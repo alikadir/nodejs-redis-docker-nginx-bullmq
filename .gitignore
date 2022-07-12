@@ -1,7 +1,7 @@
 # Project exclude paths
 /node_modules/### Node template
 
-.idea
+.idea/
 
 # Logs
 logs
