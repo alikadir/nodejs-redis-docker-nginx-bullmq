@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-redis-bullmq-background-job",
+  "name": "nodejs-redis-docker-nginx-bullmq",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
