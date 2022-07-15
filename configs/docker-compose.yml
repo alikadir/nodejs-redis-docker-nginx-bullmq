@@ -1,0 +1,22 @@
+version: '3.8'
+#name: 'my-project'
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+  my-app:
+    build:
+      context: ../
+      dockerfile: configs/Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - redis
+
+
