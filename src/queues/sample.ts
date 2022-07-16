@@ -28,11 +28,11 @@ const addJob = async (name: string, payload: SamplePayload) => {
 const worker = new Worker(queueName, async job => {
   // do somethings
   await job.updateProgress(23)
-  await new Promise((resolve, reject) => {
+  await new Promise((resolve) => {
     setTimeout(() => { resolve(true) }, 2000)
   })
   await job.updateProgress(59)
-  await new Promise((resolve, reject) => {
+  await new Promise((resolve) => {
     setTimeout(() => { resolve(true) }, 2000)
   })
   await job.updateProgress(81)
