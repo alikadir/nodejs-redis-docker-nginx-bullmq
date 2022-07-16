@@ -11,7 +11,7 @@ cp .env.local .env
 ```
 
 ```shell
-docker compose -f configs/docker-compose.yml up
+docker compose -f configs/docker-compose.yml up --build
 ```
 
 ```shell
