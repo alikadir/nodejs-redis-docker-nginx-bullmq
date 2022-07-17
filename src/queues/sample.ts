@@ -17,7 +17,7 @@ const sampleQueue = new Queue(queueName, redisConnection)
 const myQueueScheduler = new QueueScheduler(queueName, redisConnection)
 console.log(myQueueScheduler)
 
-// add initial repeatable job
+// add initial repeatable job (unique name)
 sampleQueue.add('with Cron', [1, 2, 3], { repeat: { cron: '* * * * *' } })
 sampleQueue.add('with Config', [9, 8, 7], { repeat: { every: 5000, limit: 50 }, attempts: 3 })
 
