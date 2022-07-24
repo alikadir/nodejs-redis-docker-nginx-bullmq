@@ -1,11 +1,12 @@
 import { ExpressAdapter } from '@bull-board/express'
 import { createBullBoard } from '@bull-board/api'
 import { BullMQAdapter } from '@bull-board/api/bullMQAdapter'
-import { sampleQueue } from '../queues/sample'
+import { simpleQueue } from '../queues/simple'
+import { repeatableQueue } from '../queues/repeatable'
 
 const serverAdapter = new ExpressAdapter()
 createBullBoard({
-  queues: [new BullMQAdapter(sampleQueue)],
+  queues: [new BullMQAdapter(simpleQueue), new BullMQAdapter(repeatableQueue)],
   serverAdapter
 })
 serverAdapter.setBasePath('/ui')
