@@ -1,5 +1,5 @@
 # nodejs-redis-bullmq-background-job
-BullMQ Background Job 
+🚂 BullMQ - Background Job and Queue Service on Docker compose and Docker hub
 
 **Run Local**
 
