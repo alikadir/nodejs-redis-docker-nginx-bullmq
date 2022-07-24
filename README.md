@@ -1,5 +1,4 @@
-# nodejs-redis-bullmq-background-job
-🚂 BullMQ - Background Job and Queue Service on Docker compose and Docker hub
+# 🚂 BullMQ - Background Job and Queue Service on Docker compose and Docker hub
 
 **Run Local**
 
@@ -33,4 +32,11 @@ docker run --name worker -e REDIS_HOST=redis -e QUEUE_NAME=repeatableQueue alika
 Worker Run (Simple)
 ```shell
 docker run --name worker -e REDIS_HOST=redis -e QUEUE_NAME=simpleQueue alikadir/bull-worker 
+```
+---
+Push to the Docker Hub
+```shell
+docker login
+docker push alikadir/bull-server
+docker push alikadir/bull-worker
 ```
