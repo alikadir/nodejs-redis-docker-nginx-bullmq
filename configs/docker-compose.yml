@@ -1,5 +1,4 @@
 version: '3.8'
-name: 'my-mq'
 services:
   redis:
     image: redis
@@ -16,16 +15,6 @@ services:
       REDIS_HOST: redis
     depends_on:
       - redis
-  worker-simple:
-    build:
-      context: ../apps/worker
-      dockerfile: ../../configs/worker.Dockerfile
-    restart: always
-    environment:
-      REDIS_HOST: redis
-      QUEUE_NAME: simpleQueue
-    depends_on:
-      - redis
   worker-repeatable:
     build:
       context: ../apps/worker
@@ -36,5 +25,25 @@ services:
       QUEUE_NAME: repeatableQueue
     depends_on:
       - redis
+  worker-simple:
+    build:
+      context: ../apps/worker
+      dockerfile: ../../configs/worker.Dockerfile
+    restart: always
+    environment:
+      REDIS_HOST: redis
+      QUEUE_NAME: simpleQueue
+    depends_on:
+      - redis
+#  worker-acme:
+#    build:
+#      context: ../apps/worker
+#      dockerfile: ../../configs/worker.Dockerfile
+#    restart: always
+#    environment:
+#      REDIS_HOST: redis
+#      QUEUE_NAME: acmeQueue
+#    depends_on:
+#      - redis
 
 

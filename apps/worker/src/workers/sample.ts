@@ -3,8 +3,7 @@ import { Worker } from 'bullmq'
 const redisConnection = {
   connection: {
     host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT,
-    name: process.env.QUEUE_NAME
+    port: process.env.REDIS_PORT
   }
 }
 const queueName = process.env.QUEUE_NAME!
