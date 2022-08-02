@@ -4,8 +4,8 @@
 
 ### Set environment variables
 ```shell
-cp apps/server/.env.local apps/server/.env
-cp apps/worker/.env.local apps/worker/.env
+cp apps/server/.env.example apps/server/.env
+cp apps/worker/.env.example apps/worker/.env
 ```
 ### Docker Compose Up (w/ build)
 ```shell
